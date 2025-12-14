@@ -1,0 +1,44 @@
+<app-head-bar></app-head-bar>
+<app-search-bar [autos]="autoList" (onSelectAuto)="selectAuto($event)"></app-search-bar> 
+@if(selectedAuto){
+    <div class="product-detail-container">
+        <div class="product-header">
+            <h2 class="product-title">{{selectedAuto.brand}} {{selectedAuto.model}}</h2>
+            <button class="close-btn" (click)="selectedAuto = null" aria-label="Fermer">×</button>
+        </div>
+        <div class="product-content">
+            <div class="product-image-section">
+                <div class="image-wrapper">
+                    <img [src]="selectedAuto.photo" [alt]="selectedAuto.brand + ' ' + selectedAuto.model" class="product-image">
+                </div>
+            </div>
+            <div class="product-info-section">
+                <div class="specs-grid">
+                    <div class="spec-card price-card">
+                        <div class="spec-label">Prix</div>
+                        <div class="spec-value">{{selectedAuto.price | currency:'EUR':'symbol':'1.0-0'}}</div>
+                        <div class="spec-subtext">par jour</div>
+                    </div>
+                    <div class="spec-card power-card">
+                        <div class="spec-label">Puissance</div>
+                        <div class="spec-value">{{selectedAuto.power}} CV</div>
+                        <div class="spec-subtext">chevaux</div>
+                    </div>
+                    <div class="spec-card availability-card">
+                        <div class="spec-label">Disponibilité</div>
+                        <div class="spec-value" [class.low-stock]="selectedAuto.availability <= 3">{{selectedAuto.availability}}</div>
+                        <div class="spec-subtext">{{selectedAuto.availability === 1 ? 'unité' : 'unités'}}</div>
+                    </div>
+                </div>
+                <div class="description-section">
+                    <h3 class="section-title">Description</h3>
+                    <p class="description-text">{{selectedAuto.description}}</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-reserve">Réserver maintenant</button>
+                    <button class="btn-contact">Nous contacter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

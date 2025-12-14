@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Container improvements */
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Button styles */
+.btn-success {
+    background-color: #0066CC !important;
+    border-color: #0066CC !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+}
+
+.btn-success:hover {
+    background-color: #003366 !important;
+    border-color: #003366 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.btn-success:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: #0066CC !important;
+    border-color: #0066CC !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #003366 !important;
+    border-color: #003366 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.input-group-text {
+    background-color: #003366 !important;
+    color: #ffffff !important;
+    border-color: #0066CC !important;
+    font-weight: 500;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0066CC 0%, #003366 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #003366 0%, #000000 100%);
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* Focus states for accessibility */
+input:focus,
+button:focus,
+a:focus {
+    outline: 2px solid #0066CC;
+    outline-offset: 2px;
+}
+
+/* Responsive container */
+@media (min-width: 1200px) {
+    .container-fluid {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
